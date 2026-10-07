@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="ur" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>خوابوں کی مستند تعبیر (مطابق قرآن و سنت)</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        body {
+            background-color: #f4f7f6;
+            color: #333;
+            display: flex;
+            flex-direction: column;
+            height: 100vh;
+            overflow: hidden;
+        }
+        header {
+            background: #1b4d3e;
+            color: white;
+            padding: 15px;
+            text-align: center;
+            font-size: 1.2rem;
+            font-weight: bold;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        .container {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            padding: 15px;
+            max-width: 650px;
+            width: 100%;
+            margin: 0 auto;
+            overflow-y: auto;
+        }
+        .search-box {
+            margin-bottom: 15px;
+        }
+        select, textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            font-size: 1rem;
+            margin-bottom: 10px;
+            background: white;
+        }
+        button {
+            background-color: #1b4d3e;
+            color: white;
+            border: none;
+            padding: 12px;
+            width: 100%;
+            border-radius: 8px;
+            font-size: 1rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+        button:hover {
+            background-color: #14382c;
+        }
+        .result-card {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+            margin-top: 15px;
+            display: none;
+            border-right: 5px solid #1b4d3e;
+            margin-bottom: 20px;
+        }
+        .result-title {
+            font-weight: bold;
+            color: #1b4d3e;
+            margin-bottom: 10px;
+            font-size: 1.1rem;
+        }
+        .result-text {
+            line-height: 1.7;
+            margin-bottom: 15px;
+            font-size: 1.02rem;
+        }
+        .warning-box {
+            background-color: #fff3cd;
+            color: #856404;
+            padding: 12px;
+            border-radius: 6px;
+            font-size: 0.95rem;
+            margin-top: 10px;
+            border-right: 4px solid #ffeeba;
+            line-height: 1.6;
+        }
+        .wallah-ualam {
+            text-align: left;
+            font-style: italic;
+            font-weight: bold;
+            color: #666;
+            margin-top: 15px;
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        خوابوں کی مستند تعبیر (خاندانی ذخیرہ)
+    </header>
+
+    <div class="container">
+        <div class="search-box">
+            <label for="dreamSelect" style="display:block; margin-bottom:5px; font-weight:bold;">فہرست سے اپنا خواب منتخب کریں:</label>
+            <select id="dreamSelect">
+                <option value="">-- خواب منتخب کریں --</option>
+                <option value="dead_waiting">مردوں کا کہنا کہ "ہم تمہارا انتظار کرتے ہیں" اور فوت شدہ باپ کا اعتکاف کی دعوت دینا</option>
+                <option value="father_split">زندہ باپ کا سر بیٹی کے خواب میں دو ٹکڑے دیکھنا</option>
+                <option value="taveez_drain">فوت شدہ یا زندہ والد کا نالی صاف کرنا اور نیچے سے پرانا تعویذ نکلنا</option>
+                <option value="muawwidhatayn">مدرسے میں سحر کا انکشاف اور والد کا معوذتین پڑھنے کا حکم دینا</option>
+                <option value="qيدي_ميلک">جیل میں قید ماموں کا گائیوں کا دودھ دوہنا اور ماں کا دودھ چھپا کر لے جانا</option>
+                <option value="well_save">کنویں میں گرتے گرتے بال بال بچ جانا</option>
+                <option value="butter_churning">دودھ سے مکھن نہ نکلنا، ماں کے کہنے پر اچانک بہت زیادہ مکھن نکلنا</option>
+                <option value="umar_farooq">استخارے کے بعد حضرت عمر فاروق رضی اللہ عنہ کا خواب میں نظر آنا</option>
+                <option value="gobar_hands">گوبر کے اُپلے بنانے سے ہاتھ گندے ہونا اور نہر کے سفید شفاف پانی میں دھونا</option>
+                <option value="milk_ghee">پیالے میں دودھ کے ساتھ دیسی گھی کا ہونا اور ہاتھ سے مل کر کھانا</option>
+                <option value="mother_death">فوت شدہ والدہ کو بار بار سکراتِ موت (نزاع) کی حالت میں دیکھنا</option>
+                <option value="leg_amputation">رشتہ دار کو آپریشن تھیٹر میں دیکھنا اور ڈاکٹر کا ٹانگ کاٹ دینا</option>
+                <option value="snake_bite">سانپ کا بار بار ایک ہی جگہ پر ڈسنا، زہر کا اوپر چڑھنا اور کزن کا صحیح نہ باندھ پانا</option>
+            </select>
+
+            <textarea id="customDream" rows="3" placeholder="یا اپنا نیا خواب یہاں تفصیل سے لکھیں..."></textarea>
+            <button onclick="getTabeer()">تعبیر معلوم کریں</button>
+        </div>
+
+        <div id="resultCard" class="result-card">
+            <div class="result-title">خواب کی تعبیر:</div>
+            <div id="resultText" class="result-text"></div>
+            <div id="warningBox" class="warning-box" style="display:none;">
+                <strong>تنبیہ الٰہی:</strong> یہ خواب آپ کو غفلت سے بیدار کرنے اور آخرت کی تیاری کی طرف متوجہ کرنے کے لیے ایک تنبیہ ہے۔ فوراً اپنی پنجگانہ نمازوں کی پابندی شروع کریں، کثرت سے استغفار کریں اور توبہ کا اہتمام کریں۔
+            </div>
+            <div class="wallah-ualam">فقط واللہ اعلم</div>
+        </div>
+    </div>
+
+    <script>
+        const database = {
+            "dead_waiting": {
+                text: "مردوں کا یہ کہنا کہ 'ہم تمہارا انتظار کرتے ہیں' اور باپ کا 'اعتکاف میں بیٹھنے' کی دعوت دینا اس بات کی علامت ہے کہ آپ کی زندگی میں غفلت بڑھ رہی ہے، اور یہ خواب آپ کو دنیا کی محبت چھوڑ کر آخرت کی تیاری، توبہ، اور عبادت کی طرف متوجہ کرنے کے لیے ہے۔",
+                warning: true
+            },
+            "father_split": {
+                text: "بیٹی کا یہ دیکھنا کہ اس کے زندہ باپ کا سر دو ٹکڑے ہو گیا ہے، اس کی تعبیر یہ ہے کہ آپ کی بیٹی کے دل میں آپ کی زندگی، صحت یا حفاظت کو لے کر شدید خوف، پریشانی اور فکری انتشار پایا جاتا ہے۔ خواب میں سر کے دو ٹکڑے ہونا اس بات کی علامت ہے کہ بیٹی آپ کی طرف سے کسی بڑے ذہنی دباؤ میں مبتلا ہے۔",
+                warning: true
+            },
+            "taveez_drain": {
+                text: "والد کا نالی صاف کرنا، پانی بہانا اور اس کے نیچے سے پرانا تعویذ نکال کر پھوپھی کے حوالے کرنا اس بات کی روشن دلیل ہے کہ آپ کے گھر والوں پر ماضی میں کسی نے کوئی نقصان دہ تعویذ کیا ہوا تھا جو والدہ کی طویل بیماری کا سبب بنا۔ اب اللہ تعالیٰ اس کا راز فاش فرما رہے ہیں۔ اس کا حل صرف سورۃ البقرہ کی تلاوت اور شرعی دم ہے۔",
+                warning: true
+            },
+            "muawwidhatayn": {
+                text: "مدرسے پر سحر کا انکشاف اور والد کا 'سارے لوگ معوذتین پڑھو' کا حکم دینا اس بات کی بہترین دلیل ہے کہ گھر اور مدرسے کے جملہ باطنی اثرات، جادو یا شریر لوگوں کے شر کا واحد اور حتمی علاج عاملوں کے چکر چھوڑ کر خالصتاً قرآنی دم (معوذتین اور سورۃ البقرہ) کا اہتمام کرنا ہے۔",
+                warning: true
+            },
+            "qيدي_ميلک": {
+                text: "قیدی ماموں کا دودھ دوہنا اور برتن کا نہ بھرنا قید کی سختی اور محنت کے ثمر میں تاخیر کی علامت ہے۔ جبکہ والدہ کا دودھ پتیلے میں جمع کر کے ماموں سے چھپا کر اندر لے جانا اس بات کی طرف اشارہ ہے کہ ماموں کو ملنے والی دعاؤں یا غیبی راحتوں میں پردہ ہے یا ماں اپنے بیٹے سے خاندانی فکرمندی چھپا رہی ہے۔",
+                warning: false
+            },
+            "well_save": {
+                text: "کنویں میں گرتے گرتے بال بال بچ جانا اس بات کی علامت ہے کہ آپ یا وہ شخص عنقریب کسی بڑے فتنے، دھوکے، مالی نقصان یا اچانک آنے والی بڑی مصیبت میں پھنستے پھنستے اللہ کی خاص رحمت سے محفوظ رہ جائیں گے۔",
+                warning: false
+            },
+            "butter_churning": {
+                text: "دودھ سے مکھن نکالنے میں شروع کی رکاوٹ دنیاوی یا خاندانی مشکلات میں تاخیر کو ظاہر کرتی ہے، اور والدہ کے کچھ کہنے کے بعد اچانک بہت زیادہ مکھن نکلنا اس بات کی بشارت ہے کہ والدہ کی دعاؤں اور خیر کی برکت سے بند دروازے کھلیں گے اور فراوانی نصیب ہوگی۔",
+                warning: false
+            },
+            "umar_farooq": {
+                text: "استخارے کے بعد حضرت عمر فاروق رضی اللہ عنہ کا نظر آنا اس بات کی دلیل ہے کہ اس معاملے میں عدل، حق، قوت اور مضبوط فیصلے کی راہ دکھائی جا رہی ہے۔ بات چیت مکمل ہونے سے پہلے آنکھ کھلنا اس بات کا اشارہ ہے کہ اس معاملے میں مزید غوروخوض اور استقامت کی ضرورت ہے۔",
+                warning: false
+            },
+            "gobar_hands": {
+                text: "گوبر کے اُپلے بنانے سے ہاتھوں کا گندا ہونا کسی دنیاوی مشقت یا الجھن کی علامت ہے، اور نہر کے سفید اور شفاف پانی میں جا کر ہاتھوں کا صاف ہو جانا اس بات کی عظیم بشارت ہے کہ اس مشقت کے بعد اللہ تعالیٰ طہارت، سکون اور حلال رزق کی وسعت عطا فرمائیں گے۔",
+                warning: false
+            },
+            "milk_ghee": {
+                text: "پیالے میں دودھ پینا اور ساتھ دیسی گھی کو ہاتھ سے مل کر کھانا حلال رزق، جسمانی و روحانی صحت، اور اللہ تعالیٰ کی طرف سے بے پناہ خیر، وسعت اور خوشحالی ملنے کی پکی دلیل ہے۔",
+                warning: false
+            },
+            "mother_death": {
+                text: "فوت شدہ والدہ کو بار بار سکراتِ موت (نزاع) کی حالت میں دیکھنا اس بات کا عکاس ہے کہ آپ کے دلوں میں والدہ کی آخری تکلیف دہ جدائی کا غم گہرائی سے نقش ہے اور لاشعور میں وہی منظر بار بار آتا ہے۔ اس کا علاج کثرت سے ایصالِ ثواب اور صدقہ و خیرات ہے۔",
+                warning: false
+            },
+            "leg_amputation": {
+                text: "رشتہ دار کو آپریشن تھیٹر میں دیکھنا اور ٹانگ کاٹ دیے جانے کی خبر ملنا اس بات کی علامت ہے کہ اس رشتہ دار کو زندگی میں کسی بڑے نقصان، سفر کی بندش یا شدید آزمائش کا سامنا کرنا پڑ سکتا ہے۔ اس کے لیے فوری صدقہ و خیرات کا اہتمام کرنا چاہیے۔",
+                warning: true
+            },
+            "snake_bite": {
+                text: "سانپ کا بار بار ایک ہی جگہ پر ڈسنا اور زہر کا اوپر چڑھنا اس بات کی شدید علامت ہے کہ آپ کو کسی پوشیدہ دشمن یا پرانے خاندانی فتنے سے مسلسل تکلیف پہنچائی جا رہی ہے۔ کزن کا زہر کو نہ روک پانا اس بات کی دلیل ہے کہ مروجہ یا ظاہری مدد ناکافی ہے؛ لہذا صبح و شام کے مسنون اذکار، حصنِ حصین اور معوذتین کا پکا حصار لازمی بنائیں۔",
+                warning: true
+            }
+        };
+
+        function getTabeer() {
+            const selectVal = document.getElementById('dreamSelect').value;
+            const customVal = document.getElementById('customDream').value.trim();
+            const resultCard = document.getElementById('resultCard');
+            const resultText = document.getElementById('resultText');
+            const warningBox = document.getElementById('warningBox');
+
+            let selectedData = null;
+
+            if (selectVal && database[selectVal]) {
+                selectedData = database[selectVal];
+            } else if (customVal.length > 0) {
+                // اگر صارف اپنا نیا خواب لکھے
+                selectedData = {
+                    text: "آپ کا بیان کردہ خواب موصول ہو گیا ہے۔ اصولِ تعبیر کی رو سے اس میں دنیاوی فکروں سے ہٹ کر آخرت کی طرف توجہ دینے اور اللہ کے ذکر کا اشارہ پایا جاتا ہے۔",
+                    warning: true
+                };
+            } else {
+                alert("براہ کرم فہرست سے کوئی خواب منتخب کریں یا نیچے لکھیں۔");
+                return;
+            }
+
+            resultText.innerText = selectedData.text;
+            if (selectedData.warning) {
+                warningBox.style.display = "block";
+            } else {
+                warningBox.style.display = "none";
+            }
+
+            resultCard.style.display = "block";
+        }
+    </script>
+</body>
+</html>
